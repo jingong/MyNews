@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment f1;
     private Fragment f2;
     private Fragment f3;
+    String s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
