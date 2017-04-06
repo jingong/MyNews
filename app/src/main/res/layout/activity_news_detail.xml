@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.edu.ldu.cn.mynews.NewsDetailActivity">
     <WebView
-        android:id="@+id/wb"
+        android:id="@+id/wv"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
