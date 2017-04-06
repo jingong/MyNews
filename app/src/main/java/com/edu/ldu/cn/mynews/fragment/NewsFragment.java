@@ -57,130 +57,130 @@ public class NewsFragment extends Fragment {
             }
         });
         mData = new ArrayList<>();
-        //loadData();
-        initData();
+        loadData();
+        //initData();
         adapter = new NetNewsAdapter(mData,getActivity());
         lv.setAdapter(adapter);
         return view;
     }
 
-//    private void loadData() {
-//        NewsType nt = (NewsType)getArguments().getSerializable("type");
-//        //创建请求队列
-//        RequestQueue queue = Volley.newRequestQueue(getActivity());
-//        StringRequest request = new StringRequest(
-//                Request.Method.GET,
-//                nt.getUrl(),
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String s) {
-//                        System.out.println(s);
-//                        try {
-//                            JSONObject job = new JSONObject(s);
-//                            if (job.getString("reason").equals("成功的返回")){
-//                                List<NetNews> news = new ArrayList<>();
-//                                JSONObject result = job.getJSONObject("result");
-//                                JSONArray ja = result.getJSONArray("data");
-//                                for (int i = 0; i < ja.length(); i++) {
-//                                    JSONObject item = ja.getJSONObject(i);
-//                                    NetNews n = new NetNews();
-//                                    n.setPicUrl(item.getString("thumbnail_pic_s"));
-//                                    n.setTitle(item.getString("title"));
-//                                    n.setNtime(item.getString("date"));
-//                                    n.setDescription(item.getString("author_name"));
-//                                    n.setUrl(item.getString("url"));
-//                                    news.add(n);
-//                                }
-//                                mData.addAll(news);
-//                                adapter.notifyDataSetChanged();
-//                            }
-//
-//                        } catch (Exception e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError volleyError) {
-//
-//                    }
-//                }
-//        );
-//        queue.add(request);
-//    }
+    private void loadData() {
+        NewsType nt = (NewsType)getArguments().getSerializable("type");
+        //创建请求队列
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        StringRequest request = new StringRequest(
+                Request.Method.GET,
+                nt.getUrl(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+                        System.out.println(s);
+                        try {
+                            JSONObject job = new JSONObject(s);
+                            if (job.getString("reason").equals("成功的返回")){
+                                List<NetNews> news = new ArrayList<>();
+                                JSONObject result = job.getJSONObject("result");
+                                JSONArray ja = result.getJSONArray("data");
+                                for (int i = 0; i < ja.length(); i++) {
+                                    JSONObject item = ja.getJSONObject(i);
+                                    NetNews n = new NetNews();
+                                    n.setPicUrl(item.getString("thumbnail_pic_s"));
+                                    n.setTitle(item.getString("title"));
+                                    n.setNtime(item.getString("date"));
+                                    n.setDescription(item.getString("author_name"));
+                                    n.setUrl(item.getString("url"));
+                                    news.add(n);
+                                }
+                                mData.addAll(news);
+                                adapter.notifyDataSetChanged();
+                            }
 
-    private void initData() {
-        mData.add(
-                new NetNews(
-                        "刚刚",
-                        "民进党代表提华航改台航网友讽刺：中国卧底",
-                        "北京晨报",
-                        "",
-                        R.mipmap.ic_launcher
-                )
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                }
         );
-
-        mData.add(
-                new NetNews(
-                        "刚刚",
-                        "热烈庆祝两会成功召开",
-                        "北京晨报",
-                        "",
-                        R.mipmap.ic_launcher
-                )
-        );
-
-        mData.add(
-                new NetNews(
-                        "刚刚",
-                        "留守儿童面临生活困难",
-                        "北京晨报",
-                        "",
-                        R.mipmap.ic_launcher
-                )
-        );
-
-        mData.add(
-                new NetNews(
-                        "刚刚",
-                        "国家鼓励大学生自主创业",
-                        "北京晨报",
-                        "",
-                        R.mipmap.ic_launcher
-                )
-        );
-
-        mData.add(
-                new NetNews(
-                        "刚刚",
-                        "北京出现罕见的雾霾天气",
-                        "北京晨报",
-                        "",
-                        R.mipmap.ic_launcher
-                )
-        );
-
-        mData.add(
-                new NetNews(
-                        "刚刚",
-                        "国家大力扶持中小型企业",
-                        "北京晨报",
-                        "",
-                        R.mipmap.ic_launcher
-                )
-        );
-
-        mData.add(
-                new NetNews(
-                        "刚刚",
-                        "某高中学生各科成绩均是满分",
-                        "北京晨报",
-                        "",
-                        R.mipmap.ic_launcher
-                )
-        );
-
+        queue.add(request);
     }
+
+//    private void initData() {
+//        mData.add(
+//                new NetNews(
+//                        "刚刚",
+//                        "民进党代表提华航改台航网友讽刺：中国卧底",
+//                        "北京晨报",
+//                        "",
+//                        R.mipmap.ic_launcher
+//                )
+//        );
+//
+//        mData.add(
+//                new NetNews(
+//                        "刚刚",
+//                        "热烈庆祝两会成功召开",
+//                        "北京晨报",
+//                        "",
+//                        R.mipmap.ic_launcher
+//                )
+//        );
+//
+//        mData.add(
+//                new NetNews(
+//                        "刚刚",
+//                        "留守儿童面临生活困难",
+//                        "北京晨报",
+//                        "",
+//                        R.mipmap.ic_launcher
+//                )
+//        );
+//
+//        mData.add(
+//                new NetNews(
+//                        "刚刚",
+//                        "国家鼓励大学生自主创业",
+//                        "北京晨报",
+//                        "",
+//                        R.mipmap.ic_launcher
+//                )
+//        );
+//
+//        mData.add(
+//                new NetNews(
+//                        "刚刚",
+//                        "北京出现罕见的雾霾天气",
+//                        "北京晨报",
+//                        "",
+//                        R.mipmap.ic_launcher
+//                )
+//        );
+//
+//        mData.add(
+//                new NetNews(
+//                        "刚刚",
+//                        "国家大力扶持中小型企业",
+//                        "北京晨报",
+//                        "",
+//                        R.mipmap.ic_launcher
+//                )
+//        );
+//
+//        mData.add(
+//                new NetNews(
+//                        "刚刚",
+//                        "某高中学生各科成绩均是满分",
+//                        "北京晨报",
+//                        "",
+//                        R.mipmap.ic_launcher
+//                )
+//        );
+//
+//    }
 
 }

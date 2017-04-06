@@ -9,9 +9,9 @@ public class NetNews {
     private String title;
     private String description;
     private String url;
-    private int picUrl;
+    private String picUrl;
     public NetNews(){}
-    public NetNews(String ntime,String title,String description,String url,int picUrl){
+    public NetNews(String ntime,String title,String description,String url,String picUrl){
         this.ntime = ntime;
         this.title = title;
         this.description = description;
@@ -19,11 +19,11 @@ public class NetNews {
         this.picUrl = picUrl;
     }
 
-    public int getPicUrl() {
+    public String getPicUrl() {
         return picUrl;
     }
 
-    public void setPicUrl(int picUrl) {
+    public void setPicUrl(String picUrl) {
         this.picUrl = picUrl;
     }
 

@@ -54,11 +54,11 @@ public class NetNewsAdapter extends BaseAdapter {
         TextView description = (TextView)convertView.findViewById(R.id.description);
         TextView time = (TextView)convertView.findViewById(R.id.time);
 
-//        Glide.with(context)
-//                .load(n.getPicUrl())
-//                .placeholder(R.mipmap.ic_launcher)
-//                .error(R.mipmap.ic_launcher)
-//                .into(img);
+        Glide.with(context)
+                .load(n.getPicUrl())
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
+                .into(img);
         img.setImageResource(R.mipmap.ic_launcher);
         title.setText(n.getTitle());
         description.setText(n.getDescription());
